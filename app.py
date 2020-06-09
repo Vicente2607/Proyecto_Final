@@ -11,7 +11,7 @@ import joblib
 #from geopy.geocoders import Nominatim
 
 # Google developer API key
-google_api_key ="AIzaSyBu--MADrBgOEaTUWY-8jquwBvhFKCp--s"
+google_api_key =# pon tu api_key""
 
 ## 
 
