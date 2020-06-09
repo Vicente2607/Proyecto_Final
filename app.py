@@ -74,26 +74,14 @@ def predict(room, bathroom, construction, terrain, direction, casa, casa_en_c, d
     except (KeyError, IndexError):
         notfound.append(index)
         
-   
-    room=int(room)
-    bathroom=int(bathroom)
-    construction=int(construction)
-    terrain=int(terrain)
-    nuevo=int(nuevo)
-    remate=int(remate)
-    casa=int(casa)
-    casa_en_c=int(casa_en_c)
-    depto=int(depto)
 
 
     float_features = [room, bathroom, construction, terrain, lon[0], lat[0], nuevo, remate, casa, casa_en_c, depto]
-    print("Recien Creado   ---------->",float_features)
+    
     float_features = np.array(float_features).reshape(1, -1)
-    print("despues del np.array  ---------->",float_features)
-    #float_features = X_Scaler.transform(float_features)
-    float_features= X_Scaler.fit(float_features).transform(float_features)
-
-    print("hola   ---------->",float_features)
+   
+    float_features = X_Scaler.transform(float_features)
+    #float_features= X_Scaler.fit(float_features).transform(float_features)
 
     prediction = model.predict(float_features)
     
